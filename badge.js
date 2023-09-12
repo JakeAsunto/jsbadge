@@ -36,7 +36,7 @@
   // create badge image & styles
   const badgeImage = document.createElement('img');
   badgeImage.src = `https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB`;
-  badgeImage.id = 'replitBadge';
+  badgeImage.id = 'jsBadge';
   Object.assign(badgeImage.style, validPositions[position]);
 
   // inject styles
@@ -62,5 +62,5 @@
   badgeAnchor.appendChild(badgeImage);
   document.body.appendChild(badgeAnchor);
 })(
-  document.currentScript.getAttribute('position'),
+  document.currentScript.getAttribute('position')
 );
