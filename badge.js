@@ -1,8 +1,8 @@
 /**
- * This script adds a "Made with Replit" badge to your repl when seen in full-browser view
+ * This script adds a badge to your repl when seen in full-browser view
  */
 
-(function replitBadge(theme = 'dark', position = 'bottom-left') {
+(function jsBadge(position = 'bottom-left') {
   // Suppress badge in ReplView
   if (window.location.hostname.split('.')[1] === 'id') {
     return;
@@ -35,7 +35,7 @@
 
   // create badge image & styles
   const badgeImage = document.createElement('img');
-  badgeImage.src = `https://replit.com/badge?theme=${theme}`;
+  badgeImage.src = `https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB`;
   badgeImage.id = 'replitBadge';
   Object.assign(badgeImage.style, validPositions[position]);
 
@@ -44,14 +44,14 @@
     'beforeend',
     `
     <style>
-      #replitBadge {
+      #jsBadge {
         position: fixed;
         cursor: pointer;
         z-index: 100;
         transition: transform 100ms ease-in-out;
       }
 
-      #replitBadge:hover {
+      #jsBadge:hover {
         transform: scale(1.05);
       }
     </style>
@@ -62,6 +62,5 @@
   badgeAnchor.appendChild(badgeImage);
   document.body.appendChild(badgeAnchor);
 })(
-  document.currentScript.getAttribute('theme'),
   document.currentScript.getAttribute('position'),
 );
