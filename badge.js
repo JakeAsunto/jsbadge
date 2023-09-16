@@ -3,10 +3,6 @@
  */
 
 (function jsBadge(position = 'bottom-left') {
-  // Suppress badge in ReplView
-  if (window.location.hostname.split('.')[1] === 'id') {
-    return;
-  }
 
   // define positions
   // helps reduce polluting css classes
