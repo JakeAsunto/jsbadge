@@ -2,7 +2,7 @@
  * This script adds a badge to your repl when seen in full-browser view
  */
 
-(function jsBadge(position = 'bottom-left') {
+(function jsBadge(theme, position = 'bottom-left') {
 
   // define positions
   // helps reduce polluting css classes
@@ -31,7 +31,7 @@
 
   // create badge image & styles
   const badgeImage = document.createElement('img');
-  badgeImage.src = `https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB`;
+  badgeImage.src = `https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=${theme || "%2361DAFB"}`;
   badgeImage.id = 'jsBadge';
   Object.assign(badgeImage.style, validPositions[position]);
 
